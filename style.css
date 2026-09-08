@@ -28,3 +28,17 @@ body::before, body::after{
     filter: blur(80px);
     z-index: 0;
 }
+
+body::after{
+    /*posiciona a luz azul*/
+    background: #2563eb;
+    bottom: 20%;
+    right: 25%;
+}
+
+body::before{
+    /*posiciona a luz vermelha*/
+    background: #dc2626;
+    bottom: 20%;
+    right: 25%;
+}
