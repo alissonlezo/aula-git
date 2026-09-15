@@ -48,7 +48,7 @@ body::before{
 position: relative;
 z-index: 1;
 background: rgba(255, 255, 255, 0.04);
-background-filter: blur(16px);
+backdrop-filter:  blur(16px);
 -webkit-backdrop-filter: blur(16px);
 border: 1px solid rgba(255, 255, 255, 0.12);
 padding: 40px 32px;
@@ -91,4 +91,22 @@ h1{
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.btn {
+    /*estiliza o botão*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width:  100%;
+    background: #dc2626;
+    color: #ffffff;
+    padding: 14px;
+    border-radius: 17px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.35);
+    transition: all 0.3s easeS;
 }
