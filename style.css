@@ -126,3 +126,8 @@ h1{
     max-width: 1000px;
     text-align: center;
 }
+
+.conteudo h2 [
+    /*estiliza o titulio da nova ssesão */
+    font-size: 2rem;
+]
