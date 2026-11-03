@@ -14,12 +14,22 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    position: relative;
+   /*ALTERAÇÃO: permite que a página tenha rolagem*/
+   overflow-x: hidden;
+   overflow-y: auto;
+   position: relative;
+
+   /*NOVO: organaniza os elemntos um abaixo do outro*/
+   flex-direction: column;
+   gap: 60px;
+
+   /*NOVO: adiciona espaçamento nas bordas da página*/
+   padding: 80px 20px;
 }
 
-body::before, body::after{
-    /*cria efeitos de luz no fundo*/
+
+body::before, body::after {
+    /* Cria os efeitos de luz no fundo*/
     content: '';
     position: absolute;
     width: 300px;
@@ -29,97 +39,116 @@ body::before, body::after{
     z-index: 0;
 }
 
-body::after{
-    /*posiciona a luz azul*/
-    background: #2563eb;
-    bottom: 20%;
-    right: 25%;
-}
-
 body::before{
-    /*posiciona a luz vermelha*/
+    /* posiciona a luz vermelha*/
     background: #dc2626;
     top: 20%;
     left: 25%;
 }
 
-.card {
-/*Estiliza o cartão principal*/
-position: relative;
-z-index: 1;
-background: rgba(255, 255, 255, 0.04);
-backdrop-filter:  blur(16px);
--webkit-backdrop-filter: blur(16px);
-border: 1px solid rgba(255, 255, 255, 0.12);
-padding: 40px 32px;
-border-radius: 24px;
-max-width: 420px;
-width: 90%;
-text-align: center;
-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-transition: transform 0.3s ease, border-color 0.3s ease;
+body::after{
+    /* Posiciona a luz azul*/
+    background: #2563db;
+    bottom: 20%;
+    right: 25%;
+}
+
+.card{
+    /* Estiliza o cartãoprincipal */
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 40px 32px;
+    border-radius: 24px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+
+    flex-shrink: 0;
+}
+
+.card{
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
-    /*efeito ao passar o mouse no cartão */
     transform: translateY(-5px);
     border-color: rgba(255, 255, 255, 0.25);
 }
 
 .badge{
-    /*estiliza a etiqueta/badge*/
-   display: inline-block;
-   background: rgba(220, 38, 38, 0.2);
-   color: #f87171;
-   border: 1px solid rgba(248, 113, 113, 0.3);
-   padding: 6px 16px; 
-   border-radius: 100px;
-   font-size: 0.75rem;
-   font-weight: 700;
-   letter-spacing: 1.5px;
-   text-transform: uppercase;
-   margin-bottom: 20px;
+    /*Estiliza a etiqueta/badge*/
+    display: inline-block;
+    background: rgba(220, 38, 38, 0.2);
+    color: #f87171;
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
 h1{
-    /*estiliza o titulo principal*/
+    /*Estiliza o título principal*/
     font-size: 2.1rem;
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 12px;
-    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 );
+    background: linear-gradient(135deg, #fff 0%, #cbd5e1);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.btn {
-    /*estiliza o botão*/
+p{
+    /*Estiliza o texto/parágrafo*/
+    color:#94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.btn{
+    /*Estiliza o botão*/
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    width:  100%;
+    width: 100%;
     background: #dc2626;
-    color: #ffffff;
+    color: #fff;
     padding: 14px;
-    border-radius: 17px;
+    border-radius: 12px;
     text-decoration: none;
     font-weight: 700;
     font-size: 1rem;
-    box-shadow: 0 0 20px rgba(220, 38, 38, 0.35);
-    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(2020, 38, 38, 0.35);
+    transition: all 0.3 ease;
+
 }
 
-.btn:hover {
-    /*efeito ao passar o mouse no botão*/
-    background: #ef4444;
+.btn:hover{
+    /*Efeito ao passar o mouse no botão*/
+    background:#ef4444;
     box-shadow: 0 0 25px rgba(239, 68, 68, 0.6);
     transform: scale(1.02);
 }
 
-.conteudo {
-    /*define o tamanho e a posição da nova sessão */
+
+/* Segunda parte do nosso css */
+
+.conteudo{
+    /* Define o tamanho e a posição da nova sessão */
     position: relative;
     z-index: 1;
     width: 100%;
@@ -127,7 +156,81 @@ h1{
     text-align: center;
 }
 
-.conteudo h2 [
-    /*estiliza o titulio da nova ssesão */
+.conteudo h2{
+    /* Estiliza o título da nova sessão */
     font-size: 2rem;
-]
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.informacoes {
+    /* Organiza os cartões lado a lado */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    /* Define o espaço entre os cartões */
+    gap: 20px;
+}
+
+.info-card{
+    /* Define o fundo e as bordas dos cartões */
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    /* Arredonda os cantos */
+    border-radius: 18px;
+
+    /* Define o espaçamento interno */
+    padding: 30px;
+
+    /* Alinha o conteúdo à esquerda */
+    text-align: left;
+
+    /* Adiciona uma transição suave */
+    transition: 0.3s ease;
+}
+
+.info-card:hover{
+    /* Eleva o cartão quando o mouse passa sobre ele */
+    transform: translateY(-5px);
+    
+    /* Altera a cor da borda para vermelho */
+    border-radius: #dc2626;
+}
+
+.info-card h3{
+    /* Estiliza os títulos Git e Github */
+    color: #f87171;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+
+.info-card p {
+    /* Ajusta o espaçamento entre os paragrafos */
+    margin-bottom: 12px;
+}
+
+.info-card p:last-child {
+    /* Remove o espaço abaixo do último parágrafo */
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+
+    .informacoes {
+        /* Organiza os cartões um abaixo do outro quando a tela for pequena */
+        grid-template-columns: 1fr;
+    }
+
+
+    .conteudo h2 {
+        /* Diminui o tamanho do titulo no celular */
+        font-size: 1.6rem;
+    }
+
+    .info-card {
+        /* Ajusta o espaçamento interno dos cartões */
+        padding: 22px;
+    }
+}
