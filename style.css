@@ -234,3 +234,11 @@ p{
         padding: 22px;
     }
 }
+
+/*párte 3: estilos das novas funcionalidades 
+coloca os novos elementos acima das luzae decorativas do fundo.*/
+.menu-estudo, .rodape-estudo{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
